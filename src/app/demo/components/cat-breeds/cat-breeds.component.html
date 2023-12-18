@@ -1,0 +1,57 @@
+<p>cat-breeds works!</p>
+
+<div class="col-12">
+    <div class="card">
+        <h5>Cat Breeds</h5>
+        <p-table
+            [value]="catBreeds"
+            [paginator]="true"
+            [rows]="5"
+            responsiveLayout="scroll"
+        >
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="breed">
+                        Breed
+                        <p-sortIcon field="breed"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="country">
+                        Country
+                        <p-sortIcon field="country"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="origin">
+                        Origin
+                        <p-sortIcon field="origin"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="coat">
+                        Coat
+                        <p-sortIcon field="coat"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="pattern">
+                        Pattern
+                        <p-sortIcon field="pattern"></p-sortIcon>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-catBreed>
+                <tr>
+                    <td style="width: 20%">
+                        {{ catBreed.breed }}
+                    </td>
+                    <td style="width: 20%">
+                        {{ catBreed.country }}
+                    </td>
+                    <td style="width: 20%">
+                        {{ catBreed.origin }}
+                    </td>
+                    <td style="width: 20%">
+                        {{ catBreed.coat }}
+                    </td>
+                    <td style="width: 20%">
+                        {{ catBreed.pattern }}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

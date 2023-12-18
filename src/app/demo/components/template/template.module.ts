@@ -1,12 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { FormLayoutDemoComponent } from './formlayoutdemo.component';
-import { FormLayoutDemoRoutingModule } from './formlayoutdemo-routing.module';
+import { DropdownModule } from 'primeng/dropdown';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CalendarModule } from 'primeng/calendar';
 import { ChipsModule } from 'primeng/chips';
-import { DropdownModule } from 'primeng/dropdown';
 import { InputMaskModule } from 'primeng/inputmask';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { CascadeSelectModule } from 'primeng/cascadeselect';
@@ -14,11 +12,15 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
 
+import { TemplateComponent } from './template.component';
+import { TemplateRoutingModule } from './template-routing.module';
+
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
-        FormLayoutDemoRoutingModule,
+        DropdownModule,
+        TemplateRoutingModule,
         AutoCompleteModule,
         CalendarModule,
         ChipsModule,
@@ -30,6 +32,6 @@ import { InputTextModule } from 'primeng/inputtext';
         InputTextareaModule,
         InputTextModule,
     ],
-    declarations: [FormLayoutDemoComponent],
+    declarations: [TemplateComponent],
 })
-export class FormLayoutDemoModule {}
+export class TemplateModule {}

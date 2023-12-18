@@ -1,0 +1,64 @@
+<p>template works!</p>
+
+<div class="col-12">
+    <div class="card">
+        <h5>Address</h5>
+        <div class="p-fluid p-formgrid grid">
+            <div class="field col-12 md:col-6">
+                <label htmlFor="street1">Street line 1</label>
+                <input
+                    type="text"
+                    pInputTextarea
+                    id="street1"
+                    [(ngModel)]="street1"
+                />
+            </div>
+            <div class="field col-12 md:col-6">
+                <label htmlFor="street2">Street line 2</label>
+                <input
+                    type="text"
+                    pInputTextarea
+                    id="street2"
+                    [(ngModel)]="street2"
+                />
+            </div>
+            <div class="field col-12 md:col-6">
+                <label htmlFor="city">City</label>
+                <input type="text" pInputText id="city" [(ngModel)]="city" />
+            </div>
+            <div class="field col-12 md:col-3">
+                <label htmlFor="state">State</label>
+                <p-dropdown
+                    [options]="malaysiaStates"
+                    optionLabel="name"
+                    placeholder="Select a state"
+                    [filter]="true"
+                    filterBy="name"
+                    [(ngModel)]="selectedState"
+                ></p-dropdown>
+            </div>
+            <div class="field col-12 md:col-3">
+                <label htmlFor="zip">Zip</label>
+                <p-inputNumber
+                    mode="decimal"
+                    [useGrouping]="false"
+                    id="zip"
+                    [(ngModel)]="zip"
+                >
+                </p-inputNumber>
+                <!-- <input type="number" pInputText id="zip" /> -->
+            </div>
+            <button pButton label="Submit" (click)="onSubmit()"></button>
+        </div>
+    </div>
+</div>
+
+<div class="col-12" *ngIf="isSubmitted">
+    <div class="card">
+        <div>
+            <p>{{ street1 }}</p>
+            <p>{{ street2 }}</p>
+            <p>{{ city }}, {{ selectedState.name }} {{ zip }}</p>
+        </div>
+    </div>
+</div>
